@@ -1,0 +1,92 @@
+/* propertyDetailsPage.css */
+
+.Propertydetail-body {
+    display: flex;
+    padding: 15rem;
+    justify-content: center;
+    align-items: center;
+}
+.Property-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 5% 10% 5%;
+    background-color: #fff;
+}
+
+.property-images {
+    width: 40%;
+    margin-left: 5%;
+}
+
+.property-images img {
+    width: 100%;
+    height: auto;
+}
+
+.property-detail .property-images .Images-small {
+    display: flex;
+    gap: 10px;
+}
+
+
+.details {
+    margin-top: 6rem;
+    width: 45%;
+}
+
+.details .property-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.details .property-desc {
+    display: flex;
+    width: 80%;
+    margin-top: 3rem;
+    font-size: 15px;
+
+}
+
+.purchase-details {
+    margin-top: 2rem;
+}
+
+.purchase-details .Add-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 1rem;
+    transition-duration: 0.4s;
+}
+
+.purchase-details .Add-btn:hover {
+    color: black;
+    border: 2px solid #4CAF50;
+}
+.big-image{
+    border-radius: 0.5rem; /* equivalent to rounded-lg */
+  }
+  
+  .Images-small{
+    display: flex; /* equivalent to flex */
+    gap: 0.5rem; /* equivalent to gap-2 */
+    margin-top: 0.5rem; /* equivalent to mt-2 */
+    cursor: pointer;
+  }
+  
+  
+  .property-img {
+    width: 4rem; /* equivalent to w-16 */
+    height: 4rem; /* equivalent to h-16 */
+    object-fit: cover; /* equivalent to object-cover */
+  }
+  .property-detail .property-img:hover{
+    border: 2px solid #929292;
+    transform: scale(1.10);
+  }

@@ -1,0 +1,54 @@
+.Profile-page {
+    display: flex;
+    margin-top: 8rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .Profile-page h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .Profile-page label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .Fake-image{
+    width: 100%;
+    height: 100%;
+  }
+  .Image-import{
+    width: 11%;
+  }
+  
+  .Profile-page label h1 {
+    font-size: 100px;
+    color: #333;
+  }
+  
+  .Profile-page label p {
+    margin-bottom: 10px;
+  }
+  
+  .Profile-page label input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .Profile-page button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .Profile-page button:hover {
+    background-color: #0056b3;
+  }

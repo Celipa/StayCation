@@ -1,0 +1,297 @@
+
+.cities-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  border-bottom: 1px solid #ccc;
+ 
+}
+.city-header {
+  position: relative;
+  font-size: 1rem;
+  color: #000;
+  top: 10rem;
+}
+ .city-title h1{
+    font-size: 2rem;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  .city-title p{
+    font-size: 1rem;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  .city-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+  .city-title h1{
+    font-size: 2rem;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  .city-title p{
+    font-size: 1rem;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  .cities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+  
+ }
+
+ .StayCation-Slogan {
+  margin-top: 18rem;
+  display: flex;
+  background-color: #457587;
+  padding: .4rem;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.city {
+  box-sizing: border-box;
+  color: #000;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1rem;
+  width: 30%;
+  margin: 0;
+}
+
+.city-card {
+  background-color: #ffffff;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding: 1px;
+  width: 25rem;
+  height: 20rem;
+  color: #000;
+  border-radius: 10px;
+  text-align: center;
+  margin: 5rem;
+}
+
+  .img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .city-img{
+    width: 100%;
+    border-radius: .4rem;
+    height: 80%;
+    object-fit: cover;
+    
+  }
+  .city .details-link .city-card .city-info .city-name{
+    font-size: 1rem;
+  }
+  .city .details-link .city-card .city-info .city-price{
+        font-size: 1rem;
+        margin-top: 3rem;
+    }
+  
+  .city button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #a8a68a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .city button:hover {
+    background-color: #c0bfb7;
+    color: white;
+  }
+  .city button:active {
+    background-color: #a8a68a;
+    color: white;
+  }
+  
+  .city h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .city p {
+    font-size: 18px;
+    color: #333;
+  }
+  .citys p.Cart-Amount{
+    font-size: 18px;
+    padding: 0%;
+    margin: 0;
+    color: #ffffff;
+  }
+  .city .image-navigation {
+  align-items: center;
+    
+  }
+  
+  .city .image-navigation button {
+    margin-top: 4rem;
+    margin-left: -1.7rem;
+    position: absolute;
+  }
+
+  @media (max-width: 1760px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 20rem;
+      height: 20rem;
+    }
+    .city {
+      width: 30%;
+      margin: 10px 0;
+    }
+    
+  }
+
+  @media (max-width: 1024px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 18rem;
+      height: 18rem;
+    }
+    .city {
+      width: 70%;
+      margin: 10px 0;
+    }
+    
+  }
+  @media (max-width: 1200px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city {
+      width: 30%;
+      margin: 10px 0;
+    }
+    
+  }
+
+  @media (max-width: 1000px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 35rem;
+      height: 35rem;
+    }
+    .city {
+      width: 40%;
+      margin: 10px 0;
+    }
+    
+  }
+  @media (max-width: 800px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 30rem;
+      height: 30rem;
+    }
+    .city {
+      width: 40%;
+      margin: 10px 0;
+    }
+    
+  }
+  @media (max-width: 600px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 25rem;
+      height: 25rem;
+    }
+    .city {
+      width: 40%;
+      margin: 10px 0;
+    }
+    
+  }
+  @media (max-width: 500px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 20rem;
+      height: 20rem;
+    }
+    .city {
+      width: 40%;
+      margin: 10px 0;
+    }
+    
+  }
+  @media (max-width: 400px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 15rem;
+      height: 15rem;
+    }
+    .city {
+      width: 40%;
+      margin: 10px 0;
+    }
+    
+  }
+  @media (max-width: 300px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 20rem;
+      height: 20rem;
+    }
+    .city {
+      width: 70%;
+      margin: 10px 0;
+    }
+    
+  }
+  @media (max-width: 200px) {
+    .citys {
+      flex-wrap: wrap;
+    }
+    .city-card {
+      width: 5rem;
+      height: 5rem;
+    }
+    .city {
+      width: 60%;
+      margin: 10px 0;
+    }
+    
+  }

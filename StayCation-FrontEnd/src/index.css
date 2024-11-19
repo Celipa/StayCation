@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    
+}
+/* .Body{
+    background: rgb(69,117,135);
+    background: linear-gradient(180deg, rgba(69,117,135,1) 0%, rgb(255, 255, 255) 84%);
+    background-attachment: fixed; 
+} */
+
+/*---------------------SEARCHBAR-------------------------------*/
+
+
+.search{
+    position: relative;
+    left: 50%;
+    margin-top: 13rem;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);   
+
+}
+.SökBar{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+.SearchIcon{
+    font-size: 1.6rem;
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+/*---------------------RESPONSIVE DESIGN-------------------------------*/
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      display: block;
+      border: 1px solid var(--Gray, #828181);
+      background: rgb(40,89,106);
+      background: linear-gradient(180deg, rgba(40,89,106,1) 0%, rgba(18,20,39,1) 36%);
+      background-attachment: fixed;
+    }
+    
+
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      display: block;
+      border: 1px solid var(--Gray, #828181);
+      background: rgb(40,89,106);
+      background: linear-gradient(0deg, rgba(40,89,106,1) 0%, rgba(255,255,255,1) 90%);
+      background-attachment: fixed; 
+    }
+
+
+  }
+
+
+

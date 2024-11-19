@@ -1,0 +1,47 @@
+.BookingsPage {
+    padding: 1rem;
+  }
+  
+  .BookingsPage h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .BookingsPage .order {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .BookingsPage .order h2 {
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .BookingsPage .order ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .BookingsPage .order ul li {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem 0;
+  }
+  
+  .BookingsPage .order ul li h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .BookingsPage .order ul li p {
+    color: #666;
+    margin: 0;
+  }
+  
+  .BookingsPage .order p.total {
+    color: #333;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
