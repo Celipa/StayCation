@@ -2,43 +2,30 @@ import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { useCart } from "../contexts/cartContext"
 
 export const CartItem = ({ item, className }) => {
-
-  function limitWords(text, limit) {
-    const words = text.split(' ');
-    if (words.length > limit) {
-      return words.slice(0, limit).join(' ') + '...';
-    } else {
-      return text;
-    }
-  }
-  
-  // const dispatch = useDispatch()
   const { addToCart, removeOne, removeItem } = useCart()
-  const limitedDescription = limitWords(item.product.description, 60); // Limit to 20 words
-  const limitedProductName = limitWords(item.product.name, 3); // Limit to 20 words
   const removeOneFromCart = () => {
-    // dispatch(removeOne(item.product._id))
-    removeOne(item.product._id)
+    // dispatch(removeOne(item.property._id))
+    removeOne(item.property._id)
   }
 
   const addOneToCart = () => {
-    // dispatch(addToCart(item.product))
-    addToCart(item.product)
+    // dispatch(addToCart(item.property))
+    addToCart(item.property)
   }
 
-  const deleteProduct = () => {
-    // dispatch(removeItem(item.product._id))
-    removeItem(item.product._id)
+  const deleteProperty = () => {
+    // dispatch(removeItem(item.property._id))
+    removeItem(item.property._id)
   }
 
   return (
     <div className={`checkout-item ${className}`}>
       <div className={`item-info ${className}`}>
-        <div className={`img-products ${className}`}><img src={item.product.images[0]} className={`product-image ${className}`} /></div>
+        <div className={`img-propertys ${className}`}><img src={item.property.images[0]} className={`property-image ${className}`} /></div>
           <div className={`item-info-text ${className}`}>
-            <p className={`Product-name ${className}`}>{limitedProductName}</p>
-            <p className={`product-description ${className}`}>{limitedDescription}</p>
-            <p className={`quantity-price ${className}`}>{item.quantity} x {item.product.price}:- </p>
+            <p className={`Property-name ${className}`}>{limitedPropertyName}</p>
+            <p className={`property-description ${className}`}>{limitedDescription}</p>
+            <p className={`quantity-price ${className}`}>{item.quantity} x {item.property.price}:- </p>
             </div>
       
       <div className="buttons">
@@ -47,7 +34,7 @@ export const CartItem = ({ item, className }) => {
             <FaMinus className="minus-icon" /></button>
           <button onClick={addOneToCart} className={`add-btn ${className}`}>
             <FaPlus className="plus-icon" /></button>
-            <button onClick={deleteProduct} className={`delete-btn ${className}`}>
+            <button onClick={deleteProperty} className={`delete-btn ${className}`}>
           <FaTrash className="delete-icon" /></button>
         </div>
       </div>

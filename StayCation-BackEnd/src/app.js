@@ -7,17 +7,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
-const userRoutes = require('./src/routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
 app.use('/api', userRoutes);
-const propertyRoutes = require('./src/routes/propertyRoutes');
+const propertyRoutes = require('./routes/propertyRoutes');
 app.use('/api', propertyRoutes);
-const bookingRoutes = require('./src/routes/bookingRoutes');
+const bookingRoutes = require('./routes/bookingRoutes');
 app.use('/api', bookingRoutes);
 // const orderRoutes = require('./routes/orderRoutes');
 // app.use('/api', orderRoutes);
-const messageRoutes = require('./src/routes/messageRoutes');
+const messageRoutes = require('./routes/messageRoutes');
 app.use('/api', messageRoutes);
-const cityRoutes = require('./src/routes/cityRoutes');
+const cityRoutes = require('./routes/cityRoutes');
 app.use('/api', cityRoutes);
 
 module.exports = app;

@@ -1,9 +1,11 @@
-const asyncHandler = require('express-async-handler');
-const User = require('../models/userModel');
-const bcrypt = require('bcryptjs');
+import { Request, Response } from 'express';
+import { AuthenticatedRequest } from '../middleware/authMiddleware';
+import asyncHandler from 'express-async-handler';
+import bcrypt from 'bcryptjs';
+import User from '../models/userModel';
 
 // Register a new user
-exports.registerUser = asyncHandler(async (req, res) => {
+export const registerUser = asyncHandler(async (req: Request, res: Response) => {
   const { firstName, lastName, email, password } = req.body;
 
   const userExists = await User.findOne({ email });
@@ -34,7 +36,7 @@ exports.registerUser = asyncHandler(async (req, res) => {
 });
 
 // Login user
-exports.loginUser = asyncHandler(async (req, res) => {
+export const loginUser = asyncHandler(async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
@@ -52,8 +54,7 @@ exports.loginUser = asyncHandler(async (req, res) => {
   }
 });
 
-// Get user profile
-exports.getUserProfile = asyncHandler(async (req, res) => {
+export const getUserProfile = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const user = await User.findById(req.userId);
 
   if (!user) {
@@ -66,13 +67,11 @@ exports.getUserProfile = asyncHandler(async (req, res) => {
     firstName: user.firstName,
     lastName: user.lastName,
     email: user.email,
-    displayName: user.displayName,
     profilePicture: user.profilePicture
   });
 });
 
-// Update user profile
-exports.updateUserProfile = asyncHandler(async (req, res) => {
+export const updateUserProfile = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const user = await User.findById(req.userId);
   if (!user) {
     res.status(404);
@@ -106,23 +105,10 @@ exports.updateUserProfile = asyncHandler(async (req, res) => {
     firstName: updatedUser.firstName,
     lastName: updatedUser.lastName,
     email: updatedUser.email,
-    displayName: updatedUser.displayName,
     profilePicture: updatedUser.profilePicture
   });
 });
 
-// Delete user profile
-exports.deleteUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.userId);
-
-  if (user) {
-    await user.remove();
-    res.json({ message: 'User removed' });
-  } else {
-    res.status(404);
-    throw new Error('User not found');
-  }
-});
 
 // Get all users
 exports.getAllUsers = asyncHandler(async (req, res) => {
@@ -131,15 +117,7 @@ exports.getAllUsers = asyncHandler(async (req, res) => {
 });
 
 // Get user by ID
-exports.getUserById = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-  if (user) {
-    res.json(user);
-  } else {
-    res.status(404);
-    throw new Error('User not found');
-  }
-});
+// Removed duplicate declaration of getUserById
 // exports.updateUserProfile = asyncHandler(async (req, res) => {
 
 //   const user = await User.findById(req.userId)
@@ -178,11 +156,11 @@ exports.getUserById = asyncHandler(async (req, res) => {
 // })
 
 //DELETE USER PROFILE-----------------------------------------------
-exports.deleteUserProfile = asyncHandler(async (req, res) => {
+export const deleteUserProfile = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const user = await User.findById(req.userId)
 
   if(user) {
-    await user.remove()
+    await user.deleteOne()
     res.json({ message: 'User removed' })
   } else {
     res.status(404)
@@ -191,13 +169,13 @@ exports.deleteUserProfile = asyncHandler(async (req, res) => {
 })
 
 //GET ALL USERS-----------------------------------------------
-exports.getAllUsers = asyncHandler(async (req, res) => {
+export const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
   const users = await User.find({})
   res.json(users)
 })
 
 //GET USER BY ID-----------------------------------------------
-exports.getUserById = asyncHandler(async (req, res) => {
+export const getUserById = asyncHandler(async (req: Request, res: Response) => {
   const user = await User.findById(req.params.id)
   if(user) {
     res.json(user)
@@ -208,38 +186,33 @@ exports.getUserById = asyncHandler(async (req, res) => {
 })
 
 //UPDATE USER-----------------------------------------------
-exports.updateUser = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id)
-  if(user) {
-    user.firstName = req.body.firstName || user.firstName
-    user.lastName = req.body.lastName || user.lastName
-    user.email = req.body.email || user.email
-    user.displayName = req.body.displayName || user.displayName
-    if(req.body.password) {
+export const updateUser = asyncHandler(async (req: Request, res: Response) => {
+  const user = await User.findById(req.params.id);
+  if (user) {
+    if (req.body.password) {
       user.passwordHash = await bcrypt.hash(req.body.password, 10);
     }
-    const updatedUser = await user.save()
+    const updatedUser = await user.save();
     res.json({
       _id: updatedUser._id,
       firstName: updatedUser.firstName,
       lastName: updatedUser.lastName,
       email: updatedUser.email,
-      displayName: updatedUser.displayName
-    })
+    });
   } else {
-    res.status(404)
-    throw new Error('User not found')
+    res.status(404);
+    throw new Error('User not found');
   }
-})
+});
 
 //DELETE USER-----------------------------------------------
-exports.deleteUser = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id)
-  if(user) {
-    await user.remove()
-    res.json({ message: 'User removed' })
+export const deleteUser = asyncHandler(async (req: Request, res: Response) => {
+  const user = await User.findById(req.params.id);
+  if (user) {
+    await user.deleteOne();
+    res.json({ message: 'User removed' });
   } else {
-    res.status(404)
-    throw new Error('User not found')
+    res.status(404);
+    throw new Error('User not found');
   }
-})
+});

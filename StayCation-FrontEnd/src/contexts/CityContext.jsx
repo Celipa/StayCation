@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import cityService from './cityService';
+import cityService from './services/cityService';
 
 export const CityContext = createContext();
 

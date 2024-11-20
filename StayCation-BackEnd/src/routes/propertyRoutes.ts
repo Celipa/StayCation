@@ -1,7 +1,7 @@
-import express from 'express';
-import { getAllProperties, getPropertyById, createProperty, updateProperty, deleteProperty } from '../src/controllers/propertyController';
+import { Router } from 'express';
+import { getAllProperties, getPropertyById, createProperty, updateProperty, deleteProperty } from '../controllers/propertyController';
 
-const router = express.Router();
+const router = Router();
 
 router.get('/', getAllProperties);
 router.get('/:id', getPropertyById);
