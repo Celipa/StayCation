@@ -1,6 +1,7 @@
 const app = require('./app.js');
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 
 const PORT = process.env.PORT || 3000;
@@ -8,27 +9,26 @@ const MONGO_URI = "mongodb+srv://AlvaDb:BytMig123@testdb.s0fjhfi.mongodb.net/Nod
 
 //Middleware
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 
 
 //Routes
 app.get('/', (req, res) => {
     res.send('Hello Node API');
 });
-const userRoutes = require('./routes/userRoutes')
+const userRoutes = require('./src/routes/userRoutes.js')
 app.use('/users', userRoutes)
-const propertyRoutes = require('./routes/propertyRoutes');
+const propertyRoutes = require('./src/routes/propertyRoutes.js');
 app.use('/properties', propertyRoutes);
-const bookingRoutes = require('./routes/bookingRoutes')
-app.use('/bookings', bookingRoutes)
-const cityRoutes = require('./routes/cityRoutes');
+const cityRoutes = require('./src/routes/cityRoutes.js');
 app.use('/cities', cityRoutes);
-// const productRoutes = require('./routes/productRoutes');
-// app.use('/products', productRoutes);
-// const orderRoutes = require('./routes/orderRoutes')
-// app.use('/orders', orderRoutes)
-const messageRoutes = require('./routes/messageRoutes');
+const messageRoutes = require('./src/routes/messageRoutes.js');
 app.use('/messages', messageRoutes);
+const orderRoutes = require('./src/routes/orderRoutes.js');
+app.use('/api/orders', orderRoutes);
 
 
 

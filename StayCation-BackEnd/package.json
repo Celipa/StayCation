@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "backend": "nodemon server",
-    "server": "node server.js",
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "backend": "nodemon src/server.ts",
+    "server": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,11 @@
     "router": "^2.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "@types/node": "^22.9.0",
+    "@types/express": "^4.17.17",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.2.2",
+    "ts-node": "^10.9.1"
   },
   "description": ""
 }
