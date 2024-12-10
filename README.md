@@ -1,3 +1,14 @@
+Tyvärr inte färdig, dock fungerar det att köra projektet
+FrontEnd: npm run dev
+Backend: npm run dev
+
+
+Env: 
+PORT=3000
+MONGO_URL=mongodb+srv://AlvaDb:BytMig123@testdb.s0fjhfi.mongodb.net/?retryWrites=true&w=majority&appName=NodeAPI
+JWT_SECRET=SECRET_KEY
+
+
 Sökfunktion
 StayCation erbjuder en avancerad sökfunktion där användare kan filtrera boenden baserat på:
 Stad/region i Sverige
