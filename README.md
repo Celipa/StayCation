@@ -9,6 +9,20 @@ MONGO_URL=mongodb+srv://AlvaDb:BytMig123@testdb.s0fjhfi.mongodb.net/?retryWrites
 JWT_SECRET=SECRET_KEY
 
 
+Tidsplanering:
+Vecka 1:
+Bygg upp en bas struktur för projektet och skriva upp de komponenter som jag vill inkludera i arbetet.
+
+Vecka 2: Skapa BackEnd Delen med användning av mongoDB och skapa en fungerande server för projektet.
+
+Vecka 3: Implementera de komponenterna som ska inkluderas samt gå igenom problemlösning.
+
+Vecka 4: Implementera design av projektet från figma och skapa fungerande interaktioner med sidorna.
+
+Vecka 5: Fixa detaljer samt komponenter och design som kan skapa problem samt skapa interaktiv design.
+
+
+De komponenter som ska implementeras:
 Sökfunktion
 StayCation erbjuder en avancerad sökfunktion där användare kan filtrera boenden baserat på:
 Stad/region i Sverige
@@ -45,6 +59,8 @@ Se bokningar och intäkter
 Tillgänglighetsguide
 En omfattande guide som förklarar olika tillgänglighetsanpassningar och hur man använder plattformen.
 Teknisk implementation
+
+
 
 
 
@@ -86,3 +102,21 @@ Bokningssida: Hanterar bokningsprocessen
 Användarprofil: Låter användare hantera sina uppgifter och bokningar
 Värdprofil: Ger värdar verktyg för att hantera sina boenden
 Administratörspanel: För plattformsadministratörer att övervaka och hantera systemet
+
+
+
+
+På Grund av problem med dator och program har projektet inte blivit färdigt.
+Projektet saknar:
+Betalnings sida
+Bekräftat köp sida.
+Fungerande profil sida.
+Fungerande sök bar.
+Fungerande datum komponenter.
+
+Vad som fungerar:
+Login sida
+Registerings sida
+Landingpage
+Boende sidan
+Detaljsidan
